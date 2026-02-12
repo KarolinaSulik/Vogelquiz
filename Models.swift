@@ -3,8 +3,22 @@ import Foundation
 enum QuizLevel: String, CaseIterable, Identifiable {
     case level1 = "Level 1: Identify the Bird"
     case level2 = "Level 2: Bird Facts"
+    
+    var id: String { title }
 
-    var id: String { rawValue }
+       var title: String {
+           switch self {
+           case .level1: return "Level 1: Identify the Bird"
+           case .level2: return "Level 2: Bird Facts"
+           }
+       }
+
+       var shortTitle: String {
+           switch self {
+           case .level1: return "Identify the Bird"
+           case .level2: return "Bird Facts"
+           }
+       }
 }
 
 struct Bird: Identifiable, Hashable {
