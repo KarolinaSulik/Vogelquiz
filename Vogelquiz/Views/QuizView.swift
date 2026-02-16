@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 struct QuizView: View {
+    @ObservedObject var vm: QuizViewModel
     let level: QuizLevel
     let onBackToStart: () -> Void
     let onCancel: () -> Void
@@ -16,81 +17,124 @@ struct QuizView: View {
     
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Text(level.shortTitle)
-                    .font(.headline)
-                Spacer()
-                Text("Score: \(score)")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-            if questions.isEmpty {
-                ProgressView("Loading…")
-                    .onAppear {
-                        loadQuestions()
+        ZStack {
+            Color("AppBackground")
+                .ignoresSafeArea()
+            
+            VStack(alignment: .leading, spacing: 24) {
+                if questions.isEmpty {
+                    ProgressView(vm.ui.loadingText)
+                } else if index < questions.count {
+                    HStack {
+                        Text(
+                            vm.ui.questionProgressTemplate
+                                .replacingOccurrences(of: "{current}", with: "\(index + 1)")
+                                .replacingOccurrences(of: "{total}", with: "\(questions.count)")
+                        )
+                        .font(.subheadline)
+                        .foregroundStyle(Color("AppText").opacity(0.7))
+                        Spacer()
+                        Text("\(vm.ui.scoreLabel): \(score)")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
                     }
-            } else if index < questions.count {
-                Text("Question \(index + 1) of \(questions.count)")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-
-                questionView(for: questions[index])
-            } else {
-                ResultView(
-                    score: score,
-                    total: questions.count,
-                    onRestart: {restart()},
-                    onBackToStart: {onBackToStart()}
-                )
+                    questionView(for: questions[index])
+                } else {
+                    ResultView(
+                        score: score,
+                        total: questions.count,
+                        onRestart: {restart()},
+                        onBackToStart: {onBackToStart()}
+                    )
+                }
+                Spacer()
             }
-            Spacer()
+            .padding()
+            .navigationTitle(vm.ui.navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        onCancel()   // <- to ustawia selectedLevel = nil w rodzicu
+                    } label: {
+                        Image(systemName: "chevron.left")                      }
+                }
+            }
+            .alert(lastWasCorrect ? vm.ui.correctTitle : vm.ui.wrongTitle, isPresented: $showFeedback, actions: {
+                Button(vm.ui.continueButton) {
+                    goNext()
+                }
+            }, message: {
+                Text(lastExplanation)
+            })
+            .onAppear {
+                questions = vm.questions(for: level)
+            }
+            .onChange(of: level) { _, newLevel in
+                questions = vm.questions(for: newLevel)
+                index = 0
+                score = 0
+            }
         }
-        .padding()
-        .navigationTitle("Vogelquiz")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-                  ToolbarItem(placement: .topBarLeading) {
-                      Button {
-                          onCancel()   // <- to ustawia selectedLevel = nil w rodzicu
-                      } label: {
-                          Image(systemName: "chevron.left")                      }
-                  }
-              }
-        .alert(lastWasCorrect ? "Correct ✅" : "Wrong ❌", isPresented: $showFeedback, actions: {
-            Button("Continue") {
-                goNext()
-            }
-        }, message: {
-            Text(lastExplanation)
-        })
     }
 
     @ViewBuilder
     private func questionView(for q: QuizQuestion) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-
-            // For now no images; later we will show image for level 1
+        VStack(alignment: .leading, spacing: 24) {
             Text(q.question)
                 .font(.title2)
                 .fontWeight(.semibold)
-
-            VStack(spacing: 10) {
+                .multilineTextAlignment(.leading)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+            
+            switch q.kind {
+            case .identify(let bird), .fact(let bird):
+                Image(bird.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 220)
+                    .clipShape(RoundedRectangle(cornerRadius:  18 , style: .continuous))
+                    .background {
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                            .fill(.thinMaterial)
+                    }
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                            .stroke(.quaternary, lineWidth: 1)
+                    }
+                    .shadow(radius: 10, y: 6)
+            }
+            VStack(spacing: 8) {
                 ForEach(q.options, id: \.self) { option in
                     Button {
                         handleAnswer(option, question: q)
                     } label: {
                         Text(option)
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(Color("AppText").opacity(0.7))
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
-                            .background(.thinMaterial)
-                            .cornerRadius(12)
+                            .background(
+                                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                    .fill(Color("AppButtonBackground"))
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                    .stroke(Color("AppText").opacity(0.06), lineWidth: 1)
+                            )
+                            .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
                     }
+                    .buttonStyle(.plain)
                 }
             }
         }
     }
-
+    
     private func handleAnswer(_ selected: String, question: QuizQuestion) {
         let isCorrect = (selected == question.correctAnswer)
         if isCorrect { score += 1 }
@@ -107,15 +151,6 @@ struct QuizView: View {
     private func restart() {
         score = 0
         index = 0
-        loadQuestions()
-    }
-
-    private func loadQuestions() {
-        switch level {
-        case .level1:
-            questions = QuizData.level1Questions()
-        case .level2:
-            questions = QuizData.level2Questions()
-        }
+        questions = vm.questions(for: level)
     }
 }

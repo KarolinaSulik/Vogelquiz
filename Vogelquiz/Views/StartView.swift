@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 struct StartView: View {
+    @ObservedObject var vm: QuizViewModel
     let onSelectLevel: (QuizLevel) -> Void
 
     var body: some View {
@@ -10,25 +11,22 @@ struct StartView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
-            Text("Choose a level")
+            Text(vm.ui.chooseLevelTitle)
                 .foregroundStyle(.secondary)
 
-            ForEach(QuizLevel.allCases) { level in
-                Button {
-                    onSelectLevel(level)
-                } label: {
-                    Text(level.title)
+            ForEach(QuizLevel.allCases, id: \.self) { level in
+                Button {onSelectLevel(level)} label: {
+                    Text(vm.levelTitle(level))
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(.thinMaterial)
                         .cornerRadius(12)
                 }
             }
-
             Spacer()
         }
         .padding()
-        .navigationTitle("Start")
+        .navigationTitle(vm.ui.startButton)
     }
 }
 

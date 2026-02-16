@@ -12,22 +12,28 @@
 		B24E9EF42F3E864D00F14F4B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9EEF2F3E864D00F14F4B /* StartView.swift */; };
 		B24E9EF52F3E864D00F14F4B /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9EED2F3E864D00F14F4B /* QuizView.swift */; };
 		B24E9EF62F3E864D00F14F4B /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9EEC2F3E864D00F14F4B /* QuizData.swift */; };
-		B24E9EF72F3E864D00F14F4B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9EEB2F3E864D00F14F4B /* Models.swift */; };
+		B24E9EF72F3E864D00F14F4B /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9EEB2F3E864D00F14F4B /* QuizViewModel.swift */; };
 		B24E9EF82F3E864D00F14F4B /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9EEE2F3E864D00F14F4B /* ResultView.swift */; };
 		B24E9EF92F3E864D00F14F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24E9EE92F3E864D00F14F4B /* Assets.xcassets */; };
 		B24E9EFA2F3E864D00F14F4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24E9EE72F3E864D00F14F4B /* Preview Assets.xcassets */; };
+		B24E9EFE2F3FDDF900F14F4B /* birds.json in Resources */ = {isa = PBXBuildFile; fileRef = B24E9EFD2F3FDDEF00F14F4B /* birds.json */; };
+		B24E9F002F40B8C800F14F4B /* BirdsJSONModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9EFF2F40B8BA00F14F4B /* BirdsJSONModels.swift */; };
+		B24E9F022F40CE2A00F14F4B /* BirdRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9F012F40CE1E00F14F4B /* BirdRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B24E9EE72F3E864D00F14F4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B24E9EE92F3E864D00F14F4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B24E9EEA2F3E864D00F14F4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B24E9EEB2F3E864D00F14F4B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B24E9EEB2F3E864D00F14F4B /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		B24E9EEC2F3E864D00F14F4B /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		B24E9EED2F3E864D00F14F4B /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		B24E9EEE2F3E864D00F14F4B /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		B24E9EEF2F3E864D00F14F4B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		B24E9EF02F3E864D00F14F4B /* VogelquizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VogelquizApp.swift; sourceTree = "<group>"; };
+		B24E9EFD2F3FDDEF00F14F4B /* birds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = birds.json; sourceTree = "<group>"; };
+		B24E9EFF2F40B8BA00F14F4B /* BirdsJSONModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdsJSONModels.swift; sourceTree = "<group>"; };
+		B24E9F012F40CE1E00F14F4B /* BirdRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdRepository.swift; sourceTree = "<group>"; };
 		B2C9512B2F362156003BDDE9 /* Vogelquiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vogelquiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -53,6 +59,7 @@
 		B24E9EF12F3E864D00F14F4B /* Vogelquiz */ = {
 			isa = PBXGroup;
 			children = (
+				B24E9EFD2F3FDDEF00F14F4B /* birds.json */,
 				B24E9EFC2F3E865A00F14F4B /* Views */,
 				B24E9EFB2F3E865200F14F4B /* Models */,
 				B24E9EE82F3E864D00F14F4B /* Preview Content */,
@@ -66,7 +73,9 @@
 		B24E9EFB2F3E865200F14F4B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B24E9EEB2F3E864D00F14F4B /* Models.swift */,
+				B24E9EFF2F40B8BA00F14F4B /* BirdsJSONModels.swift */,
+				B24E9F012F40CE1E00F14F4B /* BirdRepository.swift */,
+				B24E9EEB2F3E864D00F14F4B /* QuizViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +170,7 @@
 			files = (
 				B24E9EF92F3E864D00F14F4B /* Assets.xcassets in Resources */,
 				B24E9EFA2F3E864D00F14F4B /* Preview Assets.xcassets in Resources */,
+				B24E9EFE2F3FDDF900F14F4B /* birds.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,10 +183,12 @@
 			files = (
 				B24E9EF22F3E864D00F14F4B /* VogelquizApp.swift in Sources */,
 				B24E9EF32F3E864D00F14F4B /* ContentView.swift in Sources */,
+				B24E9F002F40B8C800F14F4B /* BirdsJSONModels.swift in Sources */,
 				B24E9EF42F3E864D00F14F4B /* StartView.swift in Sources */,
 				B24E9EF52F3E864D00F14F4B /* QuizView.swift in Sources */,
 				B24E9EF62F3E864D00F14F4B /* QuizData.swift in Sources */,
-				B24E9EF72F3E864D00F14F4B /* Models.swift in Sources */,
+				B24E9EF72F3E864D00F14F4B /* QuizViewModel.swift in Sources */,
+				B24E9F022F40CE2A00F14F4B /* BirdRepository.swift in Sources */,
 				B24E9EF82F3E864D00F14F4B /* ResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
