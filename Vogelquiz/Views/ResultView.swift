@@ -9,59 +9,20 @@ struct ResultView: View {
     @ObservedObject var vm: QuizViewModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("Result")
+        VStack(alignment: .leading, spacing: 24) {
+            Text(vm.ui.result)
                 .font(.title)
                 .fontWeight(.bold)
-
-            Text("You scored \(score) out of \(total).")
-                .font(.headline)
-
-            Button {
-                onRestart()
-            } label: {
-                Text(vm.ui.restartLevel)
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(Color("AppText").opacity(0.7))
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(Color("AppButtonBackground"))
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(Color("AppText").opacity(0.06), lineWidth: 1)
-                    )
-                    .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
+            Text(
+                vm.ui.resultScore
+                    .replacingOccurrences(of: "{score}", with: "\(score)")
+                    .replacingOccurrences(of: "{total}", with: "\(total)")
+            )
+            .font(.headline)
+            VStack(alignment: .leading, spacing: 16) {
+                AppButton(title: vm.ui.restartLevel, action: onRestart)
+                AppButton(title: vm.ui.backToStart, action: onBackToStart)
             }
-            .buttonStyle(.plain)
-
-            Button {
-                onBackToStart()
-            } label: {
-                Text(vm.ui.backToStart)
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(Color("AppText").opacity(0.7))
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(Color("AppButtonBackground"))
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(Color("AppText").opacity(0.06), lineWidth: 1)
-                    )
-                    .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
-            }
-            .buttonStyle(.plain)
         }
         .padding(.top, 8)
     }

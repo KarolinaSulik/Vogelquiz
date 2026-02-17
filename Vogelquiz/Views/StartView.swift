@@ -6,27 +6,30 @@ struct StartView: View {
     let onSelectLevel: (QuizLevel) -> Void
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Vogelquiz")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+        ZStack {
+            Color("AppBackground")
+                .ignoresSafeArea()
+            VStack(spacing: 48) {
+                Text("Vogelquiz")
+                    .font(.largeTitle)
+                    .bold()
+                VStack(alignment: .leading, spacing: 16){
+                    Text(vm.ui.chooseLevelTitle)
+                        .font(.headline)
 
-            Text(vm.ui.chooseLevelTitle)
-                .foregroundStyle(.secondary)
-
-            ForEach(QuizLevel.allCases, id: \.self) { level in
-                Button {onSelectLevel(level)} label: {
-                    Text(vm.levelTitle(level))
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(.thinMaterial)
-                        .cornerRadius(12)
+                    ForEach(QuizLevel.allCases, id: \.self) { level in
+                        VStack(alignment: .leading, spacing: 16) {
+                            AppButton(title: vm.levelTitle(level)) {
+                                onSelectLevel(level)
+                            }
+                        }
+                    }
                 }
+                Spacer()
             }
-            Spacer()
+            .padding()
+            .frame(maxHeight: .infinity, alignment: .top)
         }
-        .padding()
-        .navigationTitle(vm.ui.startButton)
     }
 }
 

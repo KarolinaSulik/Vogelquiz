@@ -24,6 +24,8 @@ struct UISection: Codable {
     let level2Title: LocalizedString
     let restartLevel: LocalizedString
     let backToStart: LocalizedString
+    let result: LocalizedString
+    let resultScore: LocalizedString
 }
 
 struct LocalizedString: Codable {

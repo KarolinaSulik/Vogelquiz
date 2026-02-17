@@ -33,28 +33,28 @@
     "en": "Bird Quiz"
     },
    "correctTitle": {
-    "de": "Richtig ✅",
-    "en": "Correct ✅"
-    },
-    "wrongTitle": {
-       "de": "Falsch ❌",
-       "en": "Wrong ❌"
-     },
+     "de": "🥳 Super!",
+     "en": "🥳 Great!"
+   },
+   "wrongTitle": {
+     "de": "😔 Dieses Mal nicht…",
+     "en": "😔 Not this time…"
+   },
      "startButton": {
        "de": "Start",
        "en": "Start"
      },
      "chooseLevelTitle": {
-       "de": "Wähle ein Level",
-       "en": "Choose a level"
+       "de": "Wähle ein Level:",
+       "en": "Choose a level:"
      },
      "level1Title": {
-       "de": "Level 1: Vogel erkennen",
-       "en": "Level 1: Identify the Bird"
+       "de": "Level 1: Vogel erkennen 🪶",
+       "en": "Level 1: Identify the Bird 🪶"
      },
      "level2Title": {
-       "de": "Level 2: Vogelfakten",
-       "en": "Level 2: Bird Facts"
+       "de": "Level 2: Vogelfakten 🦉",
+       "en": "Level 2: Bird Facts 🦉"
      },
      "restartLevel": {
        "de": "Level neu starten",

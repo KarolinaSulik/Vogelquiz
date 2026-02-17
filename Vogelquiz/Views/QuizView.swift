@@ -44,7 +44,8 @@ struct QuizView: View {
                         score: score,
                         total: questions.count,
                         onRestart: {restart()},
-                        onBackToStart: {onBackToStart()}
+                        onBackToStart: {onBackToStart()},
+                        vm: vm
                     )
                 }
                 Spacer()
@@ -104,32 +105,13 @@ struct QuizView: View {
                         RoundedRectangle(cornerRadius: 18, style: .continuous)
                             .stroke(.quaternary, lineWidth: 1)
                     }
-                  //  .shadow(radius: 10, y: 6)
+                    .shadow(radius: 10, y: 6)
             }
             VStack(spacing: 8) {
                 ForEach(q.options, id: \.self) { option in
-                    Button {
+                    AppButton(title: option) {
                         handleAnswer(option, question: q)
-                    } label: {
-                        Text(option)
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(Color("AppText").opacity(0.7))
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(nil)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                    .fill(Color("AppButtonBackground"))
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                    .stroke(Color("AppText").opacity(0.06), lineWidth: 1)
-                            )
-                            .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
                     }
-                    .buttonStyle(.plain)
                 }
             }
         }
