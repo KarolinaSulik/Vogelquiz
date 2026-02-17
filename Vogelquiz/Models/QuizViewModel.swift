@@ -39,7 +39,11 @@ final class QuizViewModel: ObservableObject {
         startButton: "…",
         chooseLevelTitle: "…",
         level1Title: "…",
-        level2Title: "…"
+        level2Title: "…",
+        restartLevel: "…",
+        backToStart: "…",
+        result: "…",
+        resultScore: "…"
     )
     @Published var isLoaded = false
     private(set) var quizData: QuizData?

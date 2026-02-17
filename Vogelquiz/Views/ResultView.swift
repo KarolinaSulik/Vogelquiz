@@ -6,6 +6,7 @@ struct ResultView: View {
     let total: Int
     let onRestart: () -> Void
     let onBackToStart: () -> Void
+    @ObservedObject var vm: QuizViewModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -19,23 +20,48 @@ struct ResultView: View {
             Button {
                 onRestart()
             } label: {
-                Text("Restart level")
-                    .frame(maxWidth: .infinity)
+                Text(vm.ui.restartLevel)
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(Color("AppText").opacity(0.7))
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
-                    .background(.blue)
-                    .foregroundStyle(.white)
-                    .cornerRadius(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(Color("AppButtonBackground"))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .stroke(Color("AppText").opacity(0.06), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
             }
+            .buttonStyle(.plain)
 
             Button {
                 onBackToStart()
             } label: {
-                Text("Back to start")
-                    .frame(maxWidth: .infinity)
+                Text(vm.ui.backToStart)
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(Color("AppText").opacity(0.7))
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
-                    .background(.thinMaterial)
-                    .cornerRadius(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(Color("AppButtonBackground"))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .stroke(Color("AppText").opacity(0.06), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
             }
+            .buttonStyle(.plain)
         }
         .padding(.top, 8)
     }

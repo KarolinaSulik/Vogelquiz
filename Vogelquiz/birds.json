@@ -36,7 +36,7 @@
     "de": "Richtig ✅",
     "en": "Correct ✅"
     },
-     "wrongTitle": {
+    "wrongTitle": {
        "de": "Falsch ❌",
        "en": "Wrong ❌"
      },
@@ -55,6 +55,22 @@
      "level2Title": {
        "de": "Level 2: Vogelfakten",
        "en": "Level 2: Bird Facts"
+     },
+     "restartLevel": {
+       "de": "Level neu starten",
+       "en": "Restart level"
+     },
+     "backToStart": {
+       "de": "Zurück zum Start",
+       "en": "Back to start"
+     },
+     "result": {
+       "de": "Ergebnis",
+       "en": "Result"
+     },
+     "resultScore": {
+       "de": "Du hast {score} von {total} Punkten erreicht.",
+       "en": "You scored {score} out of {total}."
      }
  },
   

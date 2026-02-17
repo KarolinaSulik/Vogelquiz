@@ -104,7 +104,7 @@ struct QuizView: View {
                         RoundedRectangle(cornerRadius: 18, style: .continuous)
                             .stroke(.quaternary, lineWidth: 1)
                     }
-                    .shadow(radius: 10, y: 6)
+                  //  .shadow(radius: 10, y: 6)
             }
             VStack(spacing: 8) {
                 ForEach(q.options, id: \.self) { option in

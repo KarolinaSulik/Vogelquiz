@@ -53,7 +53,9 @@ final class BirdRepository {
             startButton: pick(root.ui.startButton),
             chooseLevelTitle: pick(root.ui.chooseLevelTitle),
             level1Title: pick(root.ui.level1Title),
-            level2Title: pick(root.ui.level2Title)
+            level2Title: pick(root.ui.level2Title),
+            restartLevel: pick(root.ui.restartLevel),
+            backToStart: pick(root.ui.backToStart)
         )
     }
 }
@@ -73,4 +75,6 @@ struct QuizUIStrings {
     let chooseLevelTitle: String
     let level1Title: String
     let level2Title: String
+    let restartLevel: String
+    let backToStart: String
 }
