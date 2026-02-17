@@ -96,16 +96,13 @@ struct QuizView: View {
                     .scaledToFit()
                     .frame(maxWidth: .infinity)
                     .frame(height: 220)
-                    .clipShape(RoundedRectangle(cornerRadius:  18 , style: .continuous))
-                    .background {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
-                            .fill(.thinMaterial)
-                    }
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .background(.thinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 18)
                             .stroke(.quaternary, lineWidth: 1)
-                    }
-                    .shadow(radius: 10, y: 6)
+                    )
+                    .shadow(color: .black.opacity(0.12), radius: 12, y: 6)
             }
             VStack(spacing: 8) {
                 ForEach(q.options, id: \.self) { option in
