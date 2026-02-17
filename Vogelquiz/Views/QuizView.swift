@@ -24,6 +24,7 @@ struct QuizView: View {
             VStack(alignment: .leading, spacing: 24) {
                 if questions.isEmpty {
                     ProgressView(vm.ui.loadingText)
+                    Spacer()
                 } else if index < questions.count {
                     HStack {
                         Text(
@@ -47,8 +48,9 @@ struct QuizView: View {
                         onBackToStart: {onBackToStart()},
                         vm: vm
                     )
+                    Spacer()
                 }
-                Spacer()
+                
             }
             .padding()
             .navigationTitle(vm.ui.navigationTitle)
@@ -78,39 +80,48 @@ struct QuizView: View {
             }
         }
     }
-
+    
     @ViewBuilder
     private func questionView(for q: QuizQuestion) -> some View {
-        VStack(alignment: .leading, spacing: 24) {
-            Text(q.question)
-                .font(.title2)
-                .fontWeight(.semibold)
-                .multilineTextAlignment(.leading)
-                .lineLimit(nil)
-                .fixedSize(horizontal: false, vertical: true)
-            
-            switch q.kind {
-            case .identify(let bird), .fact(let bird):
-                Image(bird.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 220)
-                    .background(.thinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 18)
-                            .stroke(.quaternary, lineWidth: 1)
-                    )
-                    .shadow(color: .black.opacity(0.12), radius: 12, y: 6)
-            }
-            VStack(spacing: 8) {
-                ForEach(q.options, id: \.self) { option in
-                    AppButton(title: option) {
-                        handleAnswer(option, question: q)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                Text(q.question)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                switch q.kind {
+                case .identify(let bird), .fact(let bird):
+                    Image(bird.imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 220)
+                            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                            .background(
+                                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                    .fill(.thinMaterial)
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                    .stroke(.quaternary, lineWidth: 1)
+                            )
+                            .shadow(color: .black.opacity(0.07), radius: 30, y: 15)
+                    VStack(spacing: 8) {
+                        ForEach(q.options, id: \.self) { option in
+                            AppButton(title: option) {
+                                handleAnswer(option, question: q)
+                            }
+                        }
                     }
                 }
             }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 4)
+            .padding(.bottom, 16)
         }
     }
     

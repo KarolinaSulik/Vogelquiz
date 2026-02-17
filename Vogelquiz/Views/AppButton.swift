@@ -21,7 +21,7 @@ struct AppButton: View {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .stroke(Color("AppText").opacity(0.06), lineWidth: 1)
                 )
-                .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
+                .shadow(color: .black.opacity(0.07), radius: 24, y: 12)
                 .lineLimit(allowMultiline ? nil : 1)
         }
         .buttonStyle(.plain)
