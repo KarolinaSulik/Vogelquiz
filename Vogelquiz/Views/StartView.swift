@@ -24,6 +24,13 @@ struct StartView: View {
                             }
                         }
                     }
+                    Spacer()
+                        .frame(height: 32)
+                    Text(vm.ui.textVogelStart)
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
                 }
                 Spacer()
             }

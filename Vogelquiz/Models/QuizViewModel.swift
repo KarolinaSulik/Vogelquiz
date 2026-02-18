@@ -43,7 +43,8 @@ final class QuizViewModel: ObservableObject {
         restartLevel: "…",
         backToStart: "…",
         result: "…",
-        resultScore: "…"
+        resultScore: "…",
+        textVogelStart: "…"
     )
     @Published var isLoaded = false
     private(set) var quizData: QuizData?

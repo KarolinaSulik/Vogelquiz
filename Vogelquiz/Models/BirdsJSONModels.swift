@@ -26,6 +26,7 @@ struct UISection: Codable {
     let backToStart: LocalizedString
     let result: LocalizedString
     let resultScore: LocalizedString
+    let textVogelStart: LocalizedString
 }
 
 struct LocalizedString: Codable {

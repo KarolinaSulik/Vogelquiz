@@ -71,6 +71,10 @@
      "resultScore": {
        "de": "Du hast {score} von {total} Punkten erreicht.",
        "en": "You scored {score} out of {total}."
+     },
+     "textVogelStart": {
+        "de": "Schon beim Sonnenaufgang hört man den Gesang der Vögel. Beim Beobachten merkt man, wie faszinierend sie sind.",
+        "en": "At sunrise, the songs of birds fill the air. Watching them, you discover how fascinating they truly are."
      }
  },
   
