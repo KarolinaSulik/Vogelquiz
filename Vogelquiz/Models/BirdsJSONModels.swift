@@ -27,6 +27,9 @@ struct UISection: Codable {
     let result: LocalizedString
     let resultScore: LocalizedString
     let textVogelStart: LocalizedString
+    let repeatWrongQuestions: LocalizedString
+    let doneButton: LocalizedString
+    let birdsAtlas: LocalizedString
 }
 
 struct LocalizedString: Codable {

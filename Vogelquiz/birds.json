@@ -45,8 +45,8 @@
        "en": "Start"
      },
      "chooseLevelTitle": {
-       "de": "Wähle ein Level:",
-       "en": "Choose a level:"
+       "de": "Wähle einen Modus:",
+       "en": "Choose a mode:"
      },
      "level1Title": {
        "de": "Level 1: Vogel erkennen 🪶",
@@ -75,6 +75,18 @@
      "textVogelStart": {
         "de": "Schon beim Sonnenaufgang hört man den Gesang der Vögel. Beim Beobachten merkt man, wie faszinierend sie sind.",
         "en": "At sunrise, the songs of birds fill the air. Watching them, you discover how fascinating they truly are."
+     },
+     "repeatWrongQuestions": {
+       "de": "Fehler wiederholen {wrongCount}",
+       "en": "Repeat wrong answers {wrongCount}"
+     },
+     "doneButton": {
+       "de": "Fertig",
+       "en": "Done"
+     },
+     "birdsAtlas": {
+       "de": "Vogel-Atlas 📚🐦",
+       "en": "Bird Atlas 📚🐦"
      }
  },
   

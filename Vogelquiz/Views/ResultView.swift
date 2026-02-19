@@ -6,6 +6,8 @@ struct ResultView: View {
     let total: Int
     let onRestart: () -> Void
     let onBackToStart: () -> Void
+    let wrongCount: Int
+    let onRetryWrong: () -> Void
     @ObservedObject var vm: QuizViewModel
 
     var body: some View {
@@ -20,6 +22,11 @@ struct ResultView: View {
             )
             .font(.headline)
             VStack(alignment: .leading, spacing: 16) {
+                if wrongCount > 0 {
+                    let title = vm.ui.repeatWrongQuestions
+                        .replacingOccurrences(of: "{wrongCount}", with: "\(wrongCount)")
+                    AppButton(title: title, action: onRetryWrong)
+                }
                 AppButton(title: vm.ui.restartLevel, action: onRestart)
                 AppButton(title: vm.ui.backToStart, action: onBackToStart)
             }

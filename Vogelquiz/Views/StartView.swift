@@ -3,6 +3,8 @@ import SwiftUI
 
 struct StartView: View {
     @ObservedObject var vm: QuizViewModel
+    @State private var showAtlas = false
+    
     let onSelectLevel: (QuizLevel) -> Void
 
     var body: some View {
@@ -10,13 +12,12 @@ struct StartView: View {
             Color("AppBackground")
                 .ignoresSafeArea()
             VStack(spacing: 48) {
-                Text("Vogelquiz")
+                Text(vm.ui.navigationTitle)
                     .font(.largeTitle)
                     .bold()
                 VStack(alignment: .leading, spacing: 16){
                     Text(vm.ui.chooseLevelTitle)
                         .font(.headline)
-
                     ForEach(QuizLevel.allCases, id: \.self) { level in
                         VStack(alignment: .leading, spacing: 16) {
                             AppButton(title: vm.levelTitle(level)) {
@@ -24,18 +25,35 @@ struct StartView: View {
                             }
                         }
                     }
+                    AppButton(title: vm.ui.birdsAtlas) {
+                        showAtlas = true
+                    }
                     Spacer()
-                        .frame(height: 32)
                     Text(vm.ui.textVogelStart)
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                 }
-                Spacer()
             }
             .padding()
+            .padding(.bottom, 12)
             .frame(maxHeight: .infinity, alignment: .top)
+            .sheet(isPresented: $showAtlas) {
+                NavigationStack {
+                    BirdLibraryView(vm: vm)
+                        .toolbar {
+                            ToolbarItem(placement: .topBarTrailing) {
+                                Button(vm.ui.doneButton) {
+                                    showAtlas = false
+                                }
+                            }
+                        }
+                }
+            }
+        }
+        .onAppear {
+            vm.load(language: .de)
         }
     }
 }

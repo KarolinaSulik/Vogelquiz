@@ -13,6 +13,8 @@ struct QuizView: View {
     @State private var showFeedback: Bool = false
     @State private var lastWasCorrect: Bool = false
     @State private var lastExplanation: String = ""
+    @State private var wrongQuestions: [QuizQuestion] = []
+    @State private var isRetryingWrongOnly: Bool = false
     @Environment(\.dismiss) private var dismiss
     
     
@@ -44,8 +46,10 @@ struct QuizView: View {
                     ResultView(
                         score: score,
                         total: questions.count,
-                        onRestart: {restart()},
-                        onBackToStart: {onBackToStart()},
+                        onRestart: { restart() },
+                        onBackToStart: { onBackToStart() },
+                        wrongCount: wrongQuestions.count,
+                        onRetryWrong: { retryWrong() },
                         vm: vm
                     )
                     Spacer()
@@ -58,9 +62,10 @@ struct QuizView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        onCancel()   // <- to ustawia selectedLevel = nil w rodzicu
+                        onCancel() 
                     } label: {
-                        Image(systemName: "chevron.left")                      }
+                        Image(systemName: "chevron.left")
+                    }
                 }
             }
             .alert(lastWasCorrect ? vm.ui.correctTitle : vm.ui.wrongTitle, isPresented: $showFeedback, actions: {
@@ -72,11 +77,17 @@ struct QuizView: View {
             })
             .onAppear {
                 questions = vm.questions(for: level)
+                index = 0
+                score = 0
+                wrongQuestions = []
+                isRetryingWrongOnly = false
             }
             .onChange(of: level) { _, newLevel in
                 questions = vm.questions(for: newLevel)
                 index = 0
                 score = 0
+                wrongQuestions = []
+                isRetryingWrongOnly = false
             }
         }
     }
@@ -127,8 +138,13 @@ struct QuizView: View {
     
     private func handleAnswer(_ selected: String, question: QuizQuestion) {
         let isCorrect = (selected == question.correctAnswer)
-        if isCorrect { score += 1 }
-
+        if isCorrect {
+            score += 1
+        } else {
+            if !wrongQuestions.contains(where: { $0.id == question.id }) {
+                wrongQuestions.append(question)
+            }
+        }
         lastWasCorrect = isCorrect
         lastExplanation = question.explanation
         showFeedback = true
@@ -142,5 +158,15 @@ struct QuizView: View {
         score = 0
         index = 0
         questions = vm.questions(for: level)
+        wrongQuestions = []
+        isRetryingWrongOnly = false
+    }
+    
+    private func retryWrong() {
+        guard !wrongQuestions.isEmpty else { return }
+        questions = wrongQuestions.shuffled()
+        index = 0
+        score = 0
+        isRetryingWrongOnly = true
     }
 }

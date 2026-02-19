@@ -44,7 +44,11 @@ final class QuizViewModel: ObservableObject {
         backToStart: "…",
         result: "…",
         resultScore: "…",
-        textVogelStart: "…"
+        textVogelStart: "…",
+        repeatWrongQuestions: "…",
+        doneButton: "…",
+        birdsAtlas: "…"
+
     )
     @Published var isLoaded = false
     private(set) var quizData: QuizData?
@@ -53,7 +57,6 @@ final class QuizViewModel: ObservableObject {
     func load(language: AppLanguage) {
         guard !isLoaded else { return }
         isLoaded = true
-        // tu czytasz JSON...
         do {
             let loadedBirds = try BirdRepository.loadBirds(language: language)
             let loadedUI = try BirdRepository.loadUI(language: language)
