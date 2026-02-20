@@ -35,11 +35,11 @@ struct QuizView: View {
                                 .replacingOccurrences(of: "{total}", with: "\(questions.count)")
                         )
                         .font(.subheadline)
-                        .foregroundStyle(Color("AppText").opacity(0.7))
+                        .foregroundStyle(Color("AppTextDark"))
                         Spacer()
                         Text("\(vm.ui.scoreLabel): \(score)")
                             .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color("AppTextDark"))
                     }
                     questionView(for: questions[index])
                 } else {
@@ -169,4 +169,8 @@ struct QuizView: View {
         score = 0
         isRetryingWrongOnly = true
     }
+}
+
+#Preview {
+    QuizView(vm: QuizViewModel(), level: .level1, onBackToStart: {}, onCancel: {})
 }

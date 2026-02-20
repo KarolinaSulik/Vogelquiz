@@ -47,6 +47,7 @@ struct StartView: View {
                                 Button(vm.ui.doneButton) {
                                     showAtlas = false
                                 }
+                                .foregroundStyle(Color("AppTextDark"))
                             }
                         }
                 }
