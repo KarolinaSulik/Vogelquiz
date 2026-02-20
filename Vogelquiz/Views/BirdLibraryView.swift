@@ -14,7 +14,7 @@ struct BirdLibraryView: View {
             } else {
                 TabView(selection: $index) {
                     ForEach(Array(vm.birds.enumerated()), id: \.element.id) { i, bird in
-                        BirdAtlasCard(bird: bird)
+                        BirdAtlasCard(vm: vm, bird: bird)
                             .padding()
                             .tag(i)
                     }
