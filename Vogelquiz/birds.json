@@ -77,8 +77,8 @@
         "en": "At sunrise, the songs of birds fill the air. Watching them, you discover how fascinating they truly are."
      },
      "repeatWrongQuestions": {
-       "de": "Fehler wiederholen {wrongCount}",
-       "en": "Repeat wrong answers {wrongCount}"
+       "de": "{wrongCount} Fehler wiederholen",
+       "en": "{wrongCount} Repeat wrong answers"
      },
      "doneButton": {
        "de": "Fertig",
@@ -87,456 +87,464 @@
      "birdsAtlas": {
        "de": "Vogel-Atlas 📚🐦",
        "en": "Bird Atlas 📚🐦"
+     },
+     "sectionDescription": {
+       "de": "Beschreibung",
+       "en": "Description"
+     },
+     "sectionCharacteristics": {
+       "de": "Merkmale",
+       "en": "Characteristics"
      }
  },
   
   
   "birds": [
-      {
-          "id": "amsel",
-          "scientificName": "Turdus merula",
-          "imageName": "Amsel",
-          "text": {
-              "de": {
-                  "name": "Amsel",
-                  "hint": "Männchen meist schwarz, gelber Schnabel.",
-                  "fact": "Diese Vogelart ist häufig in Gärten zu sehen und singt oft in den frühen Morgen- und Abendstunden."
-              },
-              "en": {
-                  "name": "Blackbird",
-                  "hint": "Male usually black with yellow beak.",
-                  "fact": "This bird is common in gardens and sings in early morning and evening."
-              }
-          }
-      },
-      {
-          "id": "star",
-          "scientificName": "Sturnus vulgaris",
-          "imageName": "Star",
-          "text": {
-              "de": {
-                  "name": "Star",
-                  "hint": "Dunkel mit metallischem Glanz, oft in Schwärmen.",
-                  "fact": "Diese Vogelart kann Geräusche und andere Vogelstimmen sehr gut nachahmen."
-              },
-              "en": {
-                  "name": "Starling",
-                  "hint": "Dark with metallic shine, often in flocks.",
-                  "fact": "This bird can imitate sounds and other bird calls very well."
-              }
-          }
-      },
-      {
-          "id": "haussperling",
-          "scientificName": "Passer domesticus",
-          "imageName": "Haussperling",
-          "text": {
-              "de": {
-                  "name": "Haussperling",
-                  "hint": "Klein, braun-grau, lebt oft in Gruppen.",
-                  "fact": "Diese Art lebt meist in der Nähe des Menschen und tritt häufig in kleinen Gruppen auf."
-              },
-              "en": {
-                  "name": "House Sparrow",
-                  "hint": "Small, brown-grey, lives in groups.",
-                  "fact": "This species lives close to humans and often appears in small groups."
-              }
-          }
-      },
-      {
-          "id": "blaumeise",
-          "scientificName": "Cyanistes caeruleus",
-          "imageName": "Blaumeise",
-          "text": {
-              "de": {
-                  "name": "Blaumeise",
-                  "hint": "Blauer Kopf, gelber Bauch, sehr klein.",
-                  "fact": "Diese kleine Vogelart frisst vor allem Insekten und im Winter auch Samen."
-              },
-              "en": {
-                  "name": "Blue Tit",
-                  "hint": "Blue cap, yellow belly, very small.",
-                  "fact": "This small bird mainly eats insects and seeds in winter."
-              }
-          }
-      },
-      {
-          "id": "kohlmeise",
-          "scientificName": "Parus major",
-          "imageName": "Kohlmeise",
-          "text": {
-              "de": {
-                  "name": "Kohlmeise",
-                  "hint": "Schwarzer Kopf mit weißen Wangen, gelber Bauch.",
-                  "fact": "Diese Vogelart ist sehr anpassungsfähig und kommt häufig in Parks und Gärten vor."
-              },
-              "en": {
-                  "name": "Great Tit",
-                  "hint": "Black head with white cheeks, yellow belly.",
-                  "fact": "This bird is highly adaptable and common in parks and gardens."
-              }
-          }
-      },
-      {
-          "id": "rotkehlchen",
-          "scientificName": "Erithacus rubecula",
-          "imageName": "Rotkehlchen",
-          "text": {
-              "de": {
-                  "name": "Rotkehlchen",
-                  "hint": "Orange-rote Brust, wirkt oft zutraulich.",
-                  "fact": "Diese Vogelart ist sehr territorial und verteidigt ihr Revier energisch."
-              },
-              "en": {
-                  "name": "Robin",
-                  "hint": "Orange-red breast, often looks friendly.",
-                  "fact": "This bird is highly territorial and defends its area strongly."
-              }
-          }
-      },
+        {
+            "id": "amsel",
+            "scientificName": "Turdus merula",
+            "imageName": "Amsel",
+            "text": {
+                "de": {
+                    "name": "Amsel",
+                    "hint": "Das Männchen ist tiefschwarz mit leuchtend gelbem Schnabel und gelbem Augenring. Das Weibchen ist braun und unauffälliger gefärbt. Häufig hüpfend auf Rasenflächen auf Nahrungssuche.",
+                    "fact": "Diese Vogelart ist häufig in Gärten zu sehen und singt oft in den frühen Morgen- und Abendstunden."
+                },
+                "en": {
+                    "name": "Blackbird",
+                    "hint": "The male is glossy black with a bright yellow beak and eye-ring. The female is brown and less conspicuous. Often seen hopping on lawns while searching for worms.",
+                    "fact": "This bird is common in gardens and sings in early morning and evening."
+                }
+            }
+        },
+        {
+            "id": "star",
+            "scientificName": "Sturnus vulgaris",
+            "imageName": "Star",
+            "text": {
+                "de": {
+                    "name": "Star",
+                    "hint": "Dunkles Gefieder mit metallisch grün-violettem Glanz und hellen Punkten im Winter. Kurzer Schwanz und spitzer Schnabel. Bildet oft große, dichte Schwärme am Himmel.",
+                    "fact": "Diese Vogelart kann Geräusche und andere Vogelstimmen sehr gut nachahmen."
+                },
+                "en": {
+                    "name": "Starling",
+                    "hint": "Dark plumage with metallic green-purple sheen and pale spots in winter. Short tail and pointed beak. Often forms large, dense flocks in the sky.",
+                    "fact": "This bird can imitate sounds and other bird calls very well."
+                }
+            }
+        },
+        {
+            "id": "haussperling",
+            "scientificName": "Passer domesticus",
+            "imageName": "Haussperling",
+            "text": {
+                "de": {
+                    "name": "Haussperling",
+                    "hint": "Kleiner, kompakter Vogel mit kräftigem Schnabel. Männchen mit grauem Scheitel und schwarzer Kehle, Weibchen eher unscheinbar braun. Fast immer in der Nähe von Gebäuden zu finden.",
+                    "fact": "Diese Art lebt meist in der Nähe des Menschen und tritt häufig in kleinen Gruppen auf."
+                },
+                "en": {
+                    "name": "House Sparrow",
+                    "hint": "Small, compact bird with a strong beak. Male has grey crown and black throat, female is plain brown. Usually found close to buildings.",
+                    "fact": "This species lives close to humans and often appears in small groups."
+                }
+            }
+        },
+        {
+            "id": "blaumeise",
+            "scientificName": "Cyanistes caeruleus",
+            "imageName": "Blaumeise",
+            "text": {
+                "de": {
+                    "name": "Blaumeise",
+                    "hint": "Sehr kleiner Vogel mit blauem Scheitel und weißen Wangen. Gelbe Unterseite mit dunklem Mittelstreif. Extrem beweglich und oft kopfüber an Ästen hängend.",
+                    "fact": "Diese kleine Vogelart frisst vor allem Insekten und im Winter auch Samen."
+                },
+                "en": {
+                    "name": "Blue Tit",
+                    "hint": "Very small bird with blue crown and white cheeks. Yellow underside with dark central stripe. Extremely agile and often hangs upside down on branches.",
+                    "fact": "This small bird mainly eats insects and seeds in winter."
+                }
+            }
+        },
+
+        {
+            "id": "kohlmeise",
+            "scientificName": "Parus major",
+            "imageName": "Kohlmeise",
+            "text": {
+                "de": {
+                    "name": "Kohlmeise",
+                    "hint": "Größer als die Blaumeise, mit schwarzem Kopf und auffälligen weißen Wangen. Gelbe Brust mit breitem schwarzem Längsstreifen. Kräftiger, klarer Gesang im Frühjahr.",
+                    "fact": "Diese Vogelart ist sehr anpassungsfähig und kommt häufig in Parks und Gärten vor."
+                },
+                "en": {
+                    "name": "Great Tit",
+                    "hint": "Larger than the Blue Tit, with black head and striking white cheeks. Yellow chest with bold black stripe. Strong, clear song in spring.",
+                    "fact": "This bird is highly adaptable and common in parks and gardens."
+                }
+            }
+        },
+
+        {
+            "id": "rotkehlchen",
+            "scientificName": "Erithacus rubecula",
+            "imageName": "Rotkehlchen",
+            "text": {
+                "de": {
+                    "name": "Rotkehlchen",
+                    "hint": "Kleiner Vogel mit leuchtend orange-roter Brust und Gesicht. Brauner Rücken und große dunkle Augen. Oft am Boden hüpfend und sehr revierbewusst.",
+                    "fact": "Diese Vogelart ist sehr territorial und verteidigt ihr Revier energisch."
+                },
+                "en": {
+                    "name": "Robin",
+                    "hint": "Small bird with bright orange-red breast and face. Brown back and large dark eyes. Often hops on the ground and is strongly territorial.",
+                    "fact": "This bird is highly territorial and defends its area strongly."
+                }
+            }
+        },
       
       {
-          "id": "buchfink",
-          "scientificName": "Fringilla coelebs",
-          "imageName": "Buchfink",
-          "text": {
-              "de": {
-                  "name": "Buchfink",
-                  "hint": "Rostrosa Brust, blau-grauer Kopf beim Männchen.",
-                  "fact": "Diese Vogelart ist weit verbreitet und besonders im Frühling sehr gesangsaktiv."
-              },
-              "en": {
-                  "name": "Chaffinch",
-                  "hint": "Rust-colored chest, blue-grey head in males.",
-                  "fact": "This bird is widespread and sings actively in spring."
-              }
-          }
-      },
-      
-      {
-          "id": "zaunkoenig",
-          "scientificName": "Troglodytes troglodytes",
-          "imageName": "Zaunkönig",
-          "text": {
-              "de": {
-                  "name": "Zaunkönig",
-                  "hint": "Sehr klein, oft mit aufgerichtetem Schwanz.",
-                  "fact": "Diese sehr kleine Vogelart baut mehrere Nester, nutzt jedoch meist nur eines davon."
-              },
-              "en": {
-                  "name": "Wren",
-                  "hint": "Very small, often with upright tail.",
-                  "fact": "This very small bird builds several nests but usually uses only one."
-              }
-          }
-      },
-      
-      {
-          "id": "schwanzmeise",
-          "scientificName": "Aegithalos caudatus",
-          "imageName": "Schwanzmeise",
-          "text": {
-              "de": {
-                  "name": "Schwanzmeise",
-                  "hint": "Sehr kleiner Vogel mit auffallend langem Schwanz.",
-                  "fact": "Diese Vogelart ist für ihren sehr langen Schwanz und kunstvoll gebaute Nester bekannt."
-              },
-              "en": {
-                  "name": "Long-tailed Tit",
-                  "hint": "Very small bird with a long tail.",
-                  "fact": "This bird is known for its long tail and beautifully built nests."
-              }
-          }
-      },
-      {
-          "id": "nachtigall",
-          "scientificName": "Luscinia megarhynchos",
-          "imageName": "Nachtigall",
-          "text": {
-              "de": {
-                  "name": "Nachtigall",
-                  "hint": "Unauffällig braun, aber sehr kräftiger Gesang.",
-                  "fact": "Diese Vogelart ist vor allem für ihren besonders abwechslungsreichen und lauten Gesang bekannt."
-              },
-              "en": {
-                  "name": "Nightingale",
-                  "hint": "Plain brown but powerful singer.",
-                  "fact": "This bird is famous for its rich and powerful song."
-              }
-          }
-      },
-      {
-          "id": "elster",
-          "scientificName": "Pica pica",
-          "imageName": "Elster",
-          "text": {
-              "de": {
-                  "name": "Elster",
-                  "hint": "Schwarz-weiß, langer Schwanz, oft neugierig.",
-                  "fact": "Diese Vogelart gilt als sehr intelligent und kann komplexe Probleme lösen."
-              },
-              "en": {
-                  "name": "Magpie",
-                  "hint": "Black and white with long tail.",
-                  "fact": "This bird is considered highly intelligent and capable of solving complex problems."
-              }
-          }
-      },
-      {
-          "id": "eichelhaeher",
-          "scientificName": "Garrulus glandarius",
-          "imageName": "Eichelhäher",
-          "text": {
-              "de": {
-                  "name": "Eichelhäher",
-                  "hint": "Bräunlich mit blau-schwarz gebänderten Flügeln.",
-                  "fact": "Diese Vogelart sammelt Samen und trägt zur natürlichen Verbreitung von Bäumen bei."
-              },
-              "en": {
-                  "name": "Jay",
-                  "hint": "Brownish with blue-black wing markings.",
-                  "fact": "This bird collects seeds and helps spread trees naturally."
-              }
-          }
-      },
-      {
-          "id": "kleiber",
-          "scientificName": "Sitta europaea",
-          "imageName": "Kleiber",
-          "text": {
-              "de": {
-                  "name": "Kleiber",
-                  "hint": "Kann kopfüber an Baumstämmen laufen.",
-                  "fact": "Diese Vogelart gehört zu den wenigen, die auch kopfüber an Baumstämmen klettern können."
-              },
-              "en": {
-                  "name": "Nuthatch",
-                  "hint": "Can walk head-down on tree trunks.",
-                  "fact": "This bird is one of the few that can climb down trees headfirst."
-              }
-          }
-      },
-      {
-          "id": "buntspecht",
-          "scientificName": "Dendrocopos major",
-          "imageName": "Buntspecht",
-          "text": {
-              "de": {
-                  "name": "Buntspecht",
-                  "hint": "Schwarz-weiß, roter Bereich am Unterschwanz.",
-                  "fact": "Diese Vogelart sucht Nahrung unter der Baumrinde und trommelt häufig an Stämmen."
-              },
-              "en": {
-                  "name": "Great Spotted Woodpecker",
-                  "hint": "Black and white with red under tail.",
-                  "fact": "This bird searches for food under tree bark and often drums on trunks."
-              }
-          }
-      },
-      {
-          "id": "rauchschwalbe",
-          "scientificName": "Hirundo rustica",
-          "imageName": "Rauchschwalbe",
-          "text": {
-              "de": {
-                  "name": "Rauchschwalbe",
-                  "hint": "Schlank, langer gegabelter Schwanz.",
-                  "fact": "Diese Vogelart ist ein Langstreckenzieher und kehrt im Frühjahr aus Afrika zurück."
-              },
-              "en": {
-                  "name": "Barn Swallow",
-                  "hint": "Slim with long forked tail.",
-                  "fact": "This bird migrates long distances and returns from Africa in spring."
-              }
-          }
-      },
-      {
-          "id": "stadttaube",
-          "scientificName": "Columba livia domestica",
-          "imageName": "Stadttaube",
-          "text": {
-              "de": {
-                  "name": "Stadttaube",
-                  "hint": "Grauer Vogel, häufig in Innenstädten.",
-                  "fact": "Diese Vogelart ist stark an urbane Lebensräume angepasst."
-              },
-              "en": {
-                  "name": "City Pigeon",
-                  "hint": "Grey bird common in cities.",
-                  "fact": "This bird is highly adapted to urban environments."
-              }
-          }
-      },
-      {
-          "id": "graureiher",
-          "scientificName": "Ardea cinerea",
-          "imageName": "Graureiher",
-          "text": {
-              "de": {
-                  "name": "Graureiher",
-                  "hint": "Groß, grau, lange Beine.",
-                  "fact": "Diese Vogelart jagt meist reglos im Wasser und ernährt sich vor allem von Fischen."
-              },
-              "en": {
-                  "name": "Grey Heron",
-                  "hint": "Large grey bird with long legs.",
-                  "fact": "This bird hunts motionless in water and mainly eats fish."
-              }
-          }
-      },
-      {
-          "id": "kranich",
-          "scientificName": "Grus grus",
-          "imageName": "Kranich",
-          "text": {
-              "de": {
-                  "name": "Kranich",
-                  "hint": "Groß, laute Rufe.",
-                  "fact": "Diese Vogelart ist bekannt für auffällige Balztänze."
-              },
-              "en": {
-                  "name": "Common Crane",
-                  "hint": "Large bird with loud calls.",
-                  "fact": "This bird is known for its impressive courtship dances."
-              }
-          }
-      },
-      {
-          "id": "weissstorch",
-          "scientificName": "Ciconia ciconia",
-          "imageName": "Weißstorch",
-          "text": {
-              "de": {
-                  "name": "Weißstorch",
-                  "hint": "Sehr groß, weiß-schwarz, rote Beine.",
-                  "fact": "Diese Vogelart überwintert häufig in Afrika."
-              },
-              "en": {
-                  "name": "White Stork",
-                  "hint": "Large white and black bird with red legs.",
-                  "fact": "This bird often spends winter in Africa."
-              }
-          }
-      },
-      {
-          "id": "maeusebussard",
-          "scientificName": "Buteo buteo",
-          "imageName": "Mäusebussard",
-          "text": {
-              "de": {
-                  "name": "Mäusebussard",
-                  "hint": "Kräftiger Greifvogel.",
-                  "fact": "Diese Greifvogelart jagt überwiegend kleine Säugetiere."
-              },
-              "en": {
-                  "name": "Common Buzzard",
-                  "hint": "Strong bird of prey.",
-                  "fact": "This bird of prey mainly hunts small mammals."
-              }
-          }
-      },
-      {
-          "id": "steinadler",
-          "scientificName": "Aquila chrysaetos",
-          "imageName": "Steinadler",
-          "text": {
-              "de": {
-                  "name": "Steinadler",
-                  "hint": "Sehr großer Greifvogel.",
-                  "fact": "Diese Vogelart nutzt Thermik zum energiesparenden Segelflug."
-              },
-              "en": {
-                  "name": "Golden Eagle",
-                  "hint": "Very large bird of prey.",
-                  "fact": "This bird uses thermal currents for energy-saving flight."
-              }
-          }
-      },
-      {
-          "id": "uhu",
-          "scientificName": "Bubo bubo",
-          "imageName": "Uhu",
-          "text": {
-              "de": {
-                  "name": "Uhu",
-                  "hint": "Große Eule mit Federohren.",
-                  "fact": "Diese Eule gehört zu den größten Europas."
-              },
-              "en": {
-                  "name": "Eurasian Eagle Owl",
-                  "hint": "Large owl with ear tufts.",
-                  "fact": "This owl is one of the largest in Europe."
-              }
-          }
-      },
-      {
-          "id": "rabenkrähe",
-          "scientificName": "Corvus corone",
-          "imageName": "Rabenkrähe",
-          "text": {
-              "de": {
-                  "name": "Rabenkrähe",
-                  "hint": "Ganz schwarz.",
-                  "fact": "Diese Vogelart zeigt ausgeprägtes Problemlösungsverhalten."
-              },
-              "en": {
-                  "name": "Carrion Crow",
-                  "hint": "Completely black bird.",
-                  "fact": "This bird shows strong problem-solving abilities."
-              }
-          }
-      },
-      {
-          "id": "kolkrabe",
-          "scientificName": "Corvus corax",
-          "imageName": "Kolkrabe",
-          "text": {
-              "de": {
-                  "name": "Kolkrabe",
-                  "hint": "Sehr groß, kräftiger Schnabel.",
-                  "fact": "Diese Vogelart lebt oft in festen Paarbeziehungen."
-              },
-              "en": {
-                  "name": "Common Raven",
-                  "hint": "Very large with strong beak.",
-                  "fact": "This bird often lives in stable pairs."
-              }
-          }
-      },
-      {
-          "id": "pinguin",
-          "scientificName": "Spheniscidae",
-          "imageName": "Pinguin",
-          "text": {
-              "de": {
-                  "name": "Pinguin",
-                  "hint": "Flugunfähig, sehr guter Schwimmer.",
-                  "fact": "Diese Vogelart ist hervorragend an das Leben im Wasser angepasst."
-              },
-              "en": {
-                  "name": "Penguin",
-                  "hint": "Flightless, excellent swimmer.",
-                  "fact": "This bird is perfectly adapted to life in water."
-              }
-          }
-      },
-      {
-          "id": "strauss",
-          "scientificName": "Struthio camelus",
-          "imageName": "Strauss",
-          "text": {
-              "de": {
-                  "name": "Strauß",
-                  "hint": "Sehr groß, lange Beine.",
-                  "fact": "Diese Vogelart kann sehr hohe Laufgeschwindigkeiten erreichen."
-              },
-              "en": {
-                  "name": "Ostrich",
-                  "hint": "Very large with long legs.",
-                  "fact": "This bird can run at very high speeds."
-              }
-          }
-      },
+                "id": "buchfink",
+                "scientificName": "Fringilla coelebs",
+                "imageName": "Buchfink",
+                "text": {
+                    "de": {
+                        "name": "Buchfink",
+                        "hint": "Männchen mit rostrosa Brust und blau-grauem Kopf im Prachtkleid. Deutliche weiße Flügelbinden im Flug gut sichtbar. Häufig in Wäldern, Parks und Gärten anzutreffen.",
+                        "fact": "Diese Vogelart ist weit verbreitet und besonders im Frühling sehr gesangsaktiv."
+                    },
+                    "en": {
+                        "name": "Chaffinch",
+                        "hint": "Male has a rust-colored chest and blue-grey head in breeding plumage. Clear white wing bars visible in flight. Common in forests, parks and gardens.",
+                        "fact": "This bird is widespread and sings actively in spring."
+                    }
+                }
+            },
+            {
+                "id": "zaunkoenig",
+                "scientificName": "Troglodytes troglodytes",
+                "imageName": "Zaunkönig",
+                "text": {
+                    "de": {
+                        "name": "Zaunkönig",
+                        "hint": "Sehr kleiner, rundlicher Vogel mit kurzem, oft steil aufgerichtetem Schwanz. Braun gefärbt mit feiner Bänderung. Trotz Größe erstaunlich lauter und kräftiger Gesang.",
+                        "fact": "Diese sehr kleine Vogelart baut mehrere Nester, nutzt jedoch meist nur eines davon."
+                    },
+                    "en": {
+                        "name": "Wren",
+                        "hint": "Very small, round bird with a short tail often held upright. Brown with fine barring. Surprisingly loud and powerful song for its size.",
+                        "fact": "This very small bird builds several nests but usually uses only one."
+                    }
+                }
+            },
+            {
+                "id": "schwanzmeise",
+                "scientificName": "Aegithalos caudatus",
+                "imageName": "Schwanzmeise",
+                "text": {
+                    "de": {
+                        "name": "Schwanzmeise",
+                        "hint": "Winziger Vogel mit extrem langem, schmalem Schwanz. Weißer Kopf mit dunklem Augenstreif, rosa getönte Flanken. Meist in kleinen, lebhaften Trupps unterwegs.",
+                        "fact": "Diese Vogelart ist für ihren sehr langen Schwanz und kunstvoll gebaute Nester bekannt."
+                    },
+                    "en": {
+                        "name": "Long-tailed Tit",
+                        "hint": "Tiny bird with an exceptionally long, narrow tail. White head with dark eye stripe and pinkish flanks. Usually moves in lively small groups.",
+                        "fact": "This bird is known for its long tail and beautifully built nests."
+                    }
+                }
+            },
+            {
+                "id": "nachtigall",
+                "scientificName": "Luscinia megarhynchos",
+                "imageName": "Nachtigall",
+                "text": {
+                    "de": {
+                        "name": "Nachtigall",
+                        "hint": "Unauffällig braun gefärbt ohne markante Zeichnung. Schlanker Körper mit leicht rostbraunem Schwanz. Berühmt für ihren besonders abwechslungsreichen, kräftigen Gesang auch nachts.",
+                        "fact": "Diese Vogelart ist vor allem für ihren besonders abwechslungsreichen und lauten Gesang bekannt."
+                    },
+                    "en": {
+                        "name": "Nightingale",
+                        "hint": "Plain brown bird without striking markings. Slender body with slightly reddish tail. Famous for its rich and powerful song, often heard at night.",
+                        "fact": "This bird is famous for its rich and powerful song."
+                    }
+                }
+            },
+            {
+                "id": "elster",
+                "scientificName": "Pica pica",
+                "imageName": "Elster",
+                "text": {
+                    "de": {
+                        "name": "Elster",
+                        "hint": "Auffälliges schwarz-weißes Gefieder mit langem, metallisch schimmerndem Schwanz. Kräftiger Schnabel und selbstbewusstes Auftreten. Häufig in offenen Landschaften und Siedlungen.",
+                        "fact": "Diese Vogelart gilt als sehr intelligent und kann komplexe Probleme lösen."
+                    },
+                    "en": {
+                        "name": "Magpie",
+                        "hint": "Striking black-and-white plumage with long iridescent tail. Strong beak and confident behavior. Common in open landscapes and settlements.",
+                        "fact": "This bird is considered highly intelligent and capable of solving complex problems."
+                    }
+                }
+            },
+            {
+                "id": "eichelhaeher",
+                "scientificName": "Garrulus glandarius",
+                "imageName": "Eichelhäher",
+                "text": {
+                    "de": {
+                        "name": "Eichelhäher",
+                        "hint": "Rosa-bräunliches Gefieder mit auffällig blau-schwarz gebänderten Flügelfeldern. Schwarzer Schnurrbartstreif am Gesicht. Lauter, krächzender Ruf im Wald.",
+                        "fact": "Diese Vogelart sammelt Samen und trägt zur natürlichen Verbreitung von Bäumen bei."
+                    },
+                    "en": {
+                        "name": "Jay",
+                        "hint": "Pinkish-brown body with striking blue-and-black barred wing patch. Black moustache stripe on the face. Loud, harsh call in forests.",
+                        "fact": "This bird collects seeds and helps spread trees naturally."
+                    }
+                }
+            },
+            {
+                "id": "kleiber",
+                "scientificName": "Sitta europaea",
+                "imageName": "Kleiber",
+                "text": {
+                    "de": {
+                        "name": "Kleiber",
+                        "hint": "Blaugrauer Rücken und rostfarbene Unterseite. Deutlicher schwarzer Augenstreif. Einziger Vogel, der kopfüber an Baumstämmen hinabklettern kann.",
+                        "fact": "Diese Vogelart gehört zu den wenigen, die auch kopfüber an Baumstämmen klettern können."
+                    },
+                    "en": {
+                        "name": "Nuthatch",
+                        "hint": "Blue-grey back and rusty underside. Distinct black eye stripe. Only bird that can climb headfirst down tree trunks.",
+                        "fact": "This bird is one of the few that can climb down trees headfirst."
+                    }
+                }
+            },
+            {
+                "id": "buntspecht",
+                "scientificName": "Dendrocopos major",
+                "imageName": "Buntspecht",
+                "text": {
+                    "de": {
+                        "name": "Buntspecht",
+                        "hint": "Schwarz-weiß gefärbt mit rotem Unterschwanz. Männchen zusätzlich mit rotem Fleck am Hinterkopf. Häufig trommelnd an Baumstämmen zu hören.",
+                        "fact": "Diese Vogelart sucht Nahrung unter der Baumrinde und trommelt häufig an Stämmen."
+                    },
+                    "en": {
+                        "name": "Great Spotted Woodpecker",
+                        "hint": "Black and white plumage with red under tail. Male has red patch on the back of the head. Often heard drumming on tree trunks.",
+                        "fact": "This bird searches for food under tree bark and often drums on trunks."
+                    }
+                }
+            },
+            {
+                "id": "rauchschwalbe",
+                "scientificName": "Hirundo rustica",
+                "imageName": "Rauchschwalbe",
+                "text": {
+                    "de": {
+                        "name": "Rauchschwalbe",
+                        "hint": "Schlanker Körper mit tief gegabeltem, langem Schwanz. Oberseite dunkelblau glänzend, Kehle rötlich. Fliegt elegant und schnell über Wiesen und Höfe.",
+                        "fact": "Diese Vogelart ist ein Langstreckenzieher und kehrt im Frühjahr aus Afrika zurück."
+                    },
+                    "en": {
+                        "name": "Barn Swallow",
+                        "hint": "Slender body with deeply forked long tail. Dark blue glossy upperparts and reddish throat. Flies swiftly and gracefully over fields and farms.",
+                        "fact": "This bird migrates long distances and returns from Africa in spring."
+                    }
+                }
+            },
+            {
+                      "id": "stadttaube",
+                      "scientificName": "Columba livia domestica",
+                      "imageName": "Stadttaube",
+                      "text": {
+                          "de": {
+                              "name": "Stadttaube",
+                              "hint": "Kräftiger, mittelgroßer Vogel mit kurzem Hals und kleinem Kopf. Gefieder meist grau mit zwei dunklen Flügelbinden, kann aber stark variieren. Häufig auf Plätzen und Dächern in Städten.",
+                              "fact": "Diese Vogelart ist stark an urbane Lebensräume angepasst."
+                          },
+                          "en": {
+                              "name": "City Pigeon",
+                              "hint": "Stout medium-sized bird with short neck and small head. Usually grey with two dark wing bars, though coloration varies widely. Common on city squares and rooftops.",
+                              "fact": "This bird is highly adapted to urban environments."
+                          }
+                      }
+                  },
+                  {
+                      "id": "graureiher",
+                      "scientificName": "Ardea cinerea",
+                      "imageName": "Graureiher",
+                      "text": {
+                          "de": {
+                              "name": "Graureiher",
+                              "hint": "Sehr großer, langbeiniger Vogel mit langem Hals. Graues Gefieder und schwarzer Augenstreif bis in den Nacken. Steht oft reglos im flachen Wasser auf Fischfang.",
+                              "fact": "Diese Vogelart jagt meist reglos im Wasser und ernährt sich vor allem von Fischen."
+                          },
+                          "en": {
+                              "name": "Grey Heron",
+                              "hint": "Very tall bird with long legs and long neck. Grey plumage with black stripe extending from the eye. Often stands motionless in shallow water while hunting fish.",
+                              "fact": "This bird hunts motionless in water and mainly eats fish."
+                          }
+                      }
+                  },
+                  {
+                      "id": "kranich",
+                      "scientificName": "Grus grus",
+                      "imageName": "Kranich",
+                      "text": {
+                          "de": {
+                              "name": "Kranich",
+                              "hint": "Großer, eleganter Vogel mit langen Beinen und Hals. Graues Gefieder mit schwarzem Hals und weißem Wangenstreif. Auffällige trompetende Rufe im Flug.",
+                              "fact": "Diese Vogelart ist bekannt für auffällige Balztänze."
+                          },
+                          "en": {
+                              "name": "Common Crane",
+                              "hint": "Large elegant bird with long legs and neck. Grey plumage with black neck and white cheek stripe. Distinctive trumpeting calls in flight.",
+                              "fact": "This bird is known for its impressive courtship dances."
+                          }
+                      }
+                  },
+                  {
+                      "id": "weissstorch",
+                      "scientificName": "Ciconia ciconia",
+                      "imageName": "Weißstorch",
+                      "text": {
+                          "de": {
+                              "name": "Weißstorch",
+                              "hint": "Sehr großer Vogel mit weißem Körper und schwarzen Flügelspitzen. Lange rote Beine und langer roter Schnabel. Baut große Nester auf Dächern oder Masten.",
+                              "fact": "Diese Vogelart überwintert häufig in Afrika."
+                          },
+                          "en": {
+                              "name": "White Stork",
+                              "hint": "Very large bird with white body and black wing tips. Long red legs and long red beak. Builds large nests on roofs or poles.",
+                              "fact": "This bird often spends winter in Africa."
+                          }
+                      }
+                  },
+                  {
+                      "id": "maeusebussard",
+                      "scientificName": "Buteo buteo",
+                      "imageName": "Mäusebussard",
+                      "text": {
+                          "de": {
+                              "name": "Mäusebussard",
+                              "hint": "Kräftiger Greifvogel mit breiten Flügeln und kurzem Hals. Gefieder sehr variabel von hell bis dunkelbraun. Oft kreisend in der Thermik über Feldern zu sehen.",
+                              "fact": "Diese Greifvogelart jagt überwiegend kleine Säugetiere."
+                          },
+                          "en": {
+                              "name": "Common Buzzard",
+                              "hint": "Strong bird of prey with broad wings and short neck. Plumage highly variable from pale to dark brown. Often seen circling in thermals over fields.",
+                              "fact": "This bird of prey mainly hunts small mammals."
+                          }
+                      }
+                },
+                {
+                    "id": "steinadler",
+                    "scientificName": "Aquila chrysaetos",
+                    "imageName": "Steinadler",
+                    "text": {
+                        "de": {
+                            "name": "Steinadler",
+                            "hint": "Sehr großer Greifvogel mit langen, breiten Flügeln. Dunkelbraunes Gefieder mit goldbraunem Nacken. Majestätischer Segelflug inGebirgsregionen.",
+                            "fact": "Diese Vogelart nutzt Thermik zum energiesparenden Segelflug."
+                        },
+                        "en": {
+                            "name": "Golden Eagle",
+                            "hint": "Very large raptor with long, broad wings. Dark brown plumage with golden nape. Majestic soaring flight in mountainous areas.",
+                            "fact": "This bird uses thermal currents for energy-saving flight."
+                        }
+                    }
+            },
+            {
+           "id": "uhu",
+           "scientificName": "Bubo bubo",
+           "imageName": "Uhu",
+           "text": {
+               "de": {
+                   "name": "Uhu",
+                   "hint": "Sehr große Eule mit auffälligen Federohren. Orangefarbene Augen und kräftiger Körperbau. Meist dämmerungs- und nachtaktiv.",
+                   "fact": "Diese Eule gehört zu den größten Europas."
+               },
+               "en": {
+                   "name": "Eurasian Eagle Owl",
+                   "hint": "Very large owl with prominent ear tufts. Orange eyes and powerful build. Mostly active at dusk and night.",
+                   "fact": "This owl is one of the largest in Europe."
+               }
+           }
+       },
+       {
+           "id": "rabenkrähe",
+           "scientificName": "Corvus corone",
+           "imageName": "Rabenkrähe",
+           "text": {
+               "de": {
+                   "name": "Rabenkrähe",
+                   "hint": "Ganz schwarz gefärbt mit kräftigem Schnabel. Mittelgroß mit geradem Schwanzabschluss. Häufig auf Feldern oder in Städten zu beobachten.",
+                   "fact": "Diese Vogelart zeigt ausgeprägtes Problemlösungsverhalten."
+               },
+               "en": {
+                   "name": "Carrion Crow",
+                   "hint": "Entirely black with strong beak. Medium-sized with straight tail edge. Common in fields and urban areas.",
+                   "fact": "This bird shows strong problem-solving abilities."
+               }
+           }
+       },
+       {
+           "id": "kolkrabe",
+           "scientificName": "Corvus corax",
+           "imageName": "Kolkrabe",
+           "text": {
+               "de": {
+                   "name": "Kolkrabe",
+                   "hint": "Sehr großer, komplett schwarzer Rabenvogel. Kräftiger Schnabel und keilförmiger Schwanz im Flug. Tiefer, rauer Ruf hörbar über weite Distanzen.",
+                   "fact": "Diese Vogelart lebt oft in festen Paarbeziehungen."
+               },
+               "en": {
+                   "name": "Common Raven",
+                   "hint": "Very large all-black corvid. Strong beak and wedge-shaped tail in flight. Deep, croaking call heard over long distances.",
+                   "fact": "This bird often lives in stable pairs."
+               }
+           }
+       },
+       {
+           "id": "pinguin",
+           "scientificName": "Spheniscidae",
+           "imageName": "Pinguin",
+           "text": {
+               "de": {
+                   "name": "Pinguin",
+                   "hint": "Flugunfähiger Seevogel mit aufrechter Haltung. Schwarzer Rücken und weißer Bauch zur Tarnung im Wasser. Flügel zu Flossen umgebildet.",
+                   "fact": "Diese Vogelart ist hervorragend an das Leben im Wasser angepasst."
+               },
+               "en": {
+                   "name": "Penguin",
+                   "hint": "Flightless seabird with upright posture. Black back and white belly for camouflage in water. Wings transformed into flippers.",
+                   "fact": "This bird is perfectly adapted to life in water."
+               }
+           }
+       },
+       {
+           "id": "strauss",
+           "scientificName": "Struthio camelus",
+           "imageName": "Strauss",
+           "text": {
+               "de": {
+                   "name": "Strauß",
+                   "hint": "Größter lebender Vogel mit sehr langen, kräftigen Beinen. Flugunfähig, aber extrem schneller Läufer. Männchen schwarz-weiß, Weibchen graubraun.",
+                   "fact": "Diese Vogelart kann sehr hohe Laufgeschwindigkeiten erreichen."
+               },
+               "en": {
+                   "name": "Ostrich",
+                   "hint": "Largest living bird with very long, powerful legs. Flightless but extremely fast runner. Male black and white, female grey-brown.",
+                   "fact": "This bird can run at very high speeds."
+               }
+           }
+       },
       {
           "id": "flamingo",
           "scientificName": "Phoenicopteridae",
@@ -544,32 +552,32 @@
           "text": {
               "de": {
                   "name": "Flamingo",
-                  "hint": "Rosa Gefieder.",
+                  "hint": "Großer Watvogel mit sehr langen Beinen und langem Hals. Rosa Gefieder je nach Nahrung intensiver gefärbt. Charakteristisch gebogener Schnabel zum Filtern von Nahrung.",
                   "fact": "Diese Vogelart erhält ihre Färbung durch Farbstoffe aus der Nahrung."
               },
               "en": {
                   "name": "Flamingo",
-                  "hint": "Pink feathers.",
+                  "hint": "Large wading bird with very long legs and neck. Pink plumage depending on diet intensity. Distinctively curved beak used for filter feeding.",
                   "fact": "This bird gets its color from pigments in its food."
               }
           }
       },
-      {
-          "id": "pelikan",
-          "scientificName": "Pelecanus",
-          "imageName": "Pelikan",
-          "text": {
-              "de": {
-                  "name": "Pelikan",
-                  "hint": "Großer Schnabel mit Kehlsack.",
-                  "fact": "Diese Vogelart nutzt ihren Kehlsack zum Fangen von Fischen."
-              },
-              "en": {
-                  "name": "Pelican",
-                  "hint": "Large beak with throat pouch.",
-                  "fact": "This bird uses its throat pouch to catch fish."
-              }
-          }
-      }
+       {
+           "id": "pelikan",
+           "scientificName": "Pelecanus",
+           "imageName": "Pelikan",
+           "text": {
+               "de": {
+                   "name": "Pelikan",
+                   "hint": "Sehr großer Wasservogel mit langem Schnabel und großem Kehlsack. Heller Körper mit ausgebreiteten breiten Flügeln im Flug. Fischt oft gemeinsam in Gruppen.",
+                   "fact": "Diese Vogelart nutzt ihren Kehlsack zum Fangen von Fischen."
+               },
+               "en": {
+                   "name": "Pelican",
+                   "hint": "Very large water bird with long beak and large throat pouch. Pale body with broad wings in flight. Often fishes cooperatively in groups.",
+                   "fact": "This bird uses its throat pouch to catch fish."
+               }
+           }
+       }
     ]
 }

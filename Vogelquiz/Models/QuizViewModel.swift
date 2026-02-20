@@ -47,7 +47,9 @@ final class QuizViewModel: ObservableObject {
         textVogelStart: "…",
         repeatWrongQuestions: "…",
         doneButton: "…",
-        birdsAtlas: "…"
+        birdsAtlas: "…",
+        sectionDescription: "…",
+        sectionCharacteristics: "…"
 
     )
     @Published var isLoaded = false

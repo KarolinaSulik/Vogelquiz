@@ -30,6 +30,8 @@ struct UISection: Codable {
     let repeatWrongQuestions: LocalizedString
     let doneButton: LocalizedString
     let birdsAtlas: LocalizedString
+    let sectionDescription: LocalizedString
+    let sectionCharacteristics: LocalizedString
 }
 
 struct LocalizedString: Codable {

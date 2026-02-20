@@ -61,7 +61,9 @@ final class BirdRepository {
             textVogelStart: pick(root.ui.textVogelStart),
             repeatWrongQuestions: pick(root.ui.repeatWrongQuestions),
             doneButton: pick(root.ui.doneButton),
-            birdsAtlas: pick(root.ui.birdsAtlas)
+            birdsAtlas: pick(root.ui.birdsAtlas),
+            sectionDescription: pick(root.ui.sectionDescription),
+            sectionCharacteristics: pick(root.ui.sectionCharacteristics)
         )
     }
 }
@@ -89,4 +91,6 @@ struct QuizUIStrings {
     let repeatWrongQuestions: String
     let doneButton: String
     let birdsAtlas: String
+    let sectionDescription: String
+    let sectionCharacteristics: String
 }

@@ -29,6 +29,7 @@ struct BirdLibraryView: View {
 
 
 private struct BirdAtlasCard: View {
+    @ObservedObject var vm: QuizViewModel
     let bird: Bird
 
     var body: some View {
@@ -41,7 +42,7 @@ private struct BirdAtlasCard: View {
                 .scaledToFit()
                 .frame(maxWidth: .infinity)
                 .frame(height: 220)
-                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
                 .background(
                     RoundedRectangle(cornerRadius: 18, style: .continuous)
                         .fill(.thinMaterial)
@@ -54,19 +55,29 @@ private struct BirdAtlasCard: View {
 
                 VStack(alignment: .leading, spacing: 16) {
                     Text(bird.scientificName)
-                        .font(.body)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                     Divider()
+                    Text(vm.ui.sectionDescription)
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Color("AppText"))
                     Text(bird.fact)
-                        .font(.body)
-                        .foregroundStyle(Color("AppText").opacity(0.07))
-                    Text(bird.fact)
-                        .font(.body)
+                        .font(.body.weight(.regular))
                         .foregroundStyle(Color("AppText").opacity(0.7))
+                    Text(vm.ui.sectionCharacteristics)
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Color("AppText"))
+                    Text(bird.hint)
+                        .font(.body.weight(.regular))
+                        .foregroundStyle(Color("AppText").opacity(0.7))
+                    Spacer(minLength: 0)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
         }        
         .padding(16)
         .background(.thinMaterial)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .shadow(color: .black.opacity(0.03), radius: 30, y: 15)
     }
 }

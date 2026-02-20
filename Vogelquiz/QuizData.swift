@@ -38,7 +38,7 @@ struct QuizData {
                 question: ui.factQuestionTemplate.replacingOccurrences(of: "{name}", with: bird.name),
                 options: makeFactOptions(for: bird),
                 correctAnswer: bird.fact,
-                explanation: "\n\(bird.scientificName)\n\n\(bird.fact)\n\n\(bird.hint)"
+                explanation: "\n\(bird.fact)"
             )
         }
         .shuffled()
