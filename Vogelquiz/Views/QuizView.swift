@@ -5,7 +5,6 @@ struct QuizView: View {
     @ObservedObject var vm: QuizViewModel
     let level: QuizLevel
     let onBackToStart: () -> Void
-    let onCancel: () -> Void
     
     @State private var questions: [QuizQuestion] = []
     @State private var index: Int = 0
@@ -59,15 +58,6 @@ struct QuizView: View {
             .padding()
             .navigationTitle(vm.ui.navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        onCancel() 
-                    } label: {
-                        Image(systemName: "chevron.left")
-                    }
-                }
-            }
             .alert(lastWasCorrect ? vm.ui.correctTitle : vm.ui.wrongTitle, isPresented: $showFeedback, actions: {
                 Button(vm.ui.continueButton) {
                     goNext()
@@ -169,8 +159,4 @@ struct QuizView: View {
         score = 0
         isRetryingWrongOnly = true
     }
-}
-
-#Preview {
-    QuizView(vm: QuizViewModel(), level: .level1, onBackToStart: {}, onCancel: {})
 }

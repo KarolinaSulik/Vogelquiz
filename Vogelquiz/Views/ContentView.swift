@@ -7,18 +7,16 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            if let level = selectedLevel {
-                QuizView(
-                    vm: vm,
-                    level: level,
-                    onBackToStart: { selectedLevel = nil },
-                    onCancel: { selectedLevel = nil }
-                )
-            } else {
-                StartView (vm: vm) { level in
-                    selectedLevel = level
-                }
+            StartView(vm: vm) { level in
+                selectedLevel = level
             }
+        .navigationDestination(item: $selectedLevel) { level in
+            QuizView(
+                vm: vm,
+                level: level,
+                onBackToStart: { selectedLevel = nil }
+            )
+        }
         }
         .onAppear {
             vm.load(language: .de)
