@@ -8,8 +8,8 @@ enum QuizLevel: String, CaseIterable, Identifiable {
 }
 
 enum QuestionKind {
-    case identify(bird: Bird)  // Level 1
-    case fact(bird: Bird)      // Level 2
+    case identify(bird: Bird)
+    case fact(bird: Bird)
 }
 
 struct QuizQuestion: Identifiable {

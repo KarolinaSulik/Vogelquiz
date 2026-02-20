@@ -68,7 +68,6 @@
 				B24E9EFB2F3E865200F14F4B /* Models */,
 				B24E9EE82F3E864D00F14F4B /* Preview Content */,
 				B24E9EE92F3E864D00F14F4B /* Assets.xcassets */,
-				B24E9EEC2F3E864D00F14F4B /* QuizData.swift */,
 				B24E9EF02F3E864D00F14F4B /* VogelquizApp.swift */,
 			);
 			path = Vogelquiz;
@@ -77,6 +76,7 @@
 		B24E9EFB2F3E865200F14F4B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B24E9EEC2F3E864D00F14F4B /* QuizData.swift */,
 				B24E9EFF2F40B8BA00F14F4B /* BirdsJSONModels.swift */,
 				B24E9F012F40CE1E00F14F4B /* BirdRepository.swift */,
 				B24E9EEB2F3E864D00F14F4B /* QuizViewModel.swift */,

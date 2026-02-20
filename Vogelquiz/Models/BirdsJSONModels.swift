@@ -66,9 +66,9 @@ struct BirdTextLang: Codable {
 
 struct Bird: Identifiable, Hashable {
     let id: String
-    let name: String           // e.g., "Amsel"
-    let scientificName: String // e.g., "Turdus merula"
-    let hint: String           // short hint for Level 1
-    let fact: String           // short fact for Level 2
-    let imageName: String   
+    let name: String
+    let scientificName: String
+    let hint: String
+    let fact: String
+    let imageName: String
 }
