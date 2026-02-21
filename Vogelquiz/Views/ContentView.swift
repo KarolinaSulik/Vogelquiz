@@ -19,7 +19,7 @@ struct ContentView: View {
         }
         }
         .onAppear {
-            vm.load(language: .de)
+            vm.loadForCurrentSystemLanguage()
         }
     }
 }

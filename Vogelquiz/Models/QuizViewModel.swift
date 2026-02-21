@@ -85,4 +85,9 @@ final class QuizViewModel: ObservableObject {
         case .level2: return ui.level2Title
         }
     }
+    func loadForCurrentSystemLanguage() {
+        let code = Locale.current.language.languageCode?.identifier ?? "en"
+        let language: AppLanguage = code == "de" ? .de : .en
+        load(language: language)
+    }
 }
