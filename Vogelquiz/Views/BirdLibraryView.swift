@@ -3,12 +3,10 @@ import SwiftUI
 struct BirdLibraryView: View {
     @ObservedObject var vm: QuizViewModel
     @State private var index: Int = 0
-    
+
     var body: some View {
-        
         ZStack {
             Color("AppBackground").ignoresSafeArea()
-            
             if vm.birds.isEmpty {
                 ProgressView(vm.ui.loadingText)
             } else {
@@ -26,7 +24,6 @@ struct BirdLibraryView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
 
 private struct BirdAtlasCard: View {
     @ObservedObject var vm: QuizViewModel

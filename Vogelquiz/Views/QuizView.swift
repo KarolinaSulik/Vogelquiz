@@ -16,7 +16,6 @@ struct QuizView: View {
     @State private var isRetryingWrongOnly: Bool = false
     @Environment(\.dismiss) private var dismiss
     
-    
     var body: some View {
         ZStack {
             Color("AppBackground")

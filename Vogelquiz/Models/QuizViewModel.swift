@@ -3,7 +3,6 @@ import Foundation
 enum QuizLevel: String, CaseIterable, Identifiable {
     case level1
     case level2
-
     var id: String { rawValue }
 }
 
@@ -23,7 +22,6 @@ struct QuizQuestion: Identifiable {
 
 @MainActor
 final class QuizViewModel: ObservableObject {
-    
     @Published var birds: [Bird] = []
     @Published var ui: QuizUIStrings = .init(
         identifyQuestion: "…",

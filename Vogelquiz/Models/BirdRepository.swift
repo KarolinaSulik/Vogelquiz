@@ -4,9 +4,7 @@ enum BirdRepositoryError: Error {
     case fileNotFound
     case decodeFailed(Error)
 }
-
 final class BirdRepository {
-
     static func loadRoot(from filename: String = "birds", fileExtension: String = "json") throws -> BirdsRoot {
         guard let url = Bundle.main.url(forResource: filename, withExtension: fileExtension) else {
             throw BirdRepositoryError.fileNotFound
@@ -33,7 +31,6 @@ final class BirdRepository {
             )
         }
     }
-
     static func loadUI(language: AppLanguage) throws -> QuizUIStrings {
         let root = try loadRoot()
         func pick(_ loc: LocalizedString) -> String {
